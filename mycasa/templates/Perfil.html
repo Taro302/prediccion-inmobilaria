@@ -1,0 +1,65 @@
+{% extends 'home.html' %}
+{% load static %}
+  
+<main>
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/Perfil.css' %}">
+    <article>
+  <section class="contact" id="contact">
+        <div class="contacForm">
+              <div class="form">
+                  <div class="texto">
+                      <h2>¡HOLA ADMINISTRADOR!</h2>
+                      <p>Listos para predecir Casas</p>
+                  </div>
+    
+                  <form action="">
+              
+                      <div class="inputBox">
+                        <label for="">Nombre </label>
+                          
+                      </div>
+                      <div class="inputBox">
+                        <label for="">Apellidos </label>
+                          
+                      </div>
+                      <div class="inputBox">
+                        <label for="">DNI </label>
+                         
+                      </div>
+                      <div class="inputBox">
+                          <label for="">Descripción </label>
+                          <textarea name="" id="" cols="30" rows="5" placeholder="Consulta..."></textarea>
+                      </div>
+                      <input type="submit" value="Enviar Consulta">
+                  </form>
+              </div>   
+              <div class="info">
+                  <div class="imgBox">
+                      <img src={% static 'images/perfiles.jpg' %} alt="">
+                  </div>
+                  <div class="textBox">
+                      <div class="infoContact">
+                          <ion-icon name="call"></ion-icon><p>+51 936 703 836</p>
+                      </div>
+                      <div class="infoContact">
+                
+                        <ion-icon name="mail"></ion-icon><p>info@agenciainmobiliaria.com</p>
+                      </div>
+                  </div>
+                  <div class="rrss">
+                      <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                      <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                      <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                  </div>
+              </div>
+        </div>
+    </div>
+  </section>
+
+    </article>
+    {% endblock %}
+</main>
+
+
+</html>

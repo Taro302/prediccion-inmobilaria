@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+ {% load static %}
+  {% block content %}
+<link rel="stylesheet" href="{% static '/css/style_cotizacion.css'%}" />
+<div class="container1">
+  <div class="form-image">
+    <figure class="hero-banner">
+      <img
+        src="{% static '/images/house.jpg'%}"
+        alt="Modern house model"
+        class="w-100"
+      />
+    </figure>
+  </div>
+
+  <div class="form">
+    <div class="form-header">
+      <div class="title2">
+        <h1>Resultado de la predicción</h1>
+        <div class="title-form">
+          {% load custom_filters %}
+
+          <p>El precio de venta estimado es: $ {{ prediccion }} dolares</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

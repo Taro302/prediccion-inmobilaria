@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InmobiAI</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <link href='{% static './css/InicioSesion.css' %}' rel='stylesheet' type='text/css'>
+   
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <!--FORM DE INICIO DE SESION-->
+            <form class="sign-in-form" method="POST">
+                {% csrf_token %}
+                <img
+                style="
+                  width: 65px;
+                  height: auto;
+                  display: inline;
+                  filter: invert(100%);
+                "
+                src="{% static 'images/inmobiliaria.png' %}"
+                alt="Icono"
+              />
+                <h2 class="title">InmobiAI</h2>
+                <!-- Campos de formulario para el login -->
+                <div class="input-field">
+                    <i for="username" class='bx bxs-user'></i>
+                    <input type="text" placeholder="Usuario" id="username" name="username" required>
+                </div>
+                <div for="password" class="input-field">
+                    <i class='bx bxs-lock-alt'></i>
+                    <input type="password" placeholder="Contraseña" id="password" name="password" required>
+                </div>
+                <input type="submit" value="Login" name="login_submit" class="btn solid">
+                
+                <!--MENSAJE DE ERORR -->
+                {% if messages %}
+                <div class="error-messages">
+                  {% for message in messages %}
+                    <p class="social-text" id="error-message">{{ message }}</p>
+                  {% endfor %}
+                </div>
+              
+                <script>
+                  setTimeout(function() {
+                    var errorMessages = document.querySelector('.error-messages');
+                    if (errorMessages) {
+                      errorMessages.style.display = 'none';
+                    }
+                  }, 2000); // 2000 milisegundos = 2 segundos
+                </script>
+              {% endif %}
+
+                <div class="social-media">
+                    <a href="https://Facebook.com/login" class="social-icon">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
+ 
+                    </a>
+                    <a href="https://google.com/login" class="social-icon">
+                        <i class='bx bxl-google'></i>
+                    </a>
+
+                </div>
+            </form>
+
+            <!-- FORM DE REGISTRO DE SESION-->
+            <form class="sign-up-form" method="POST">
+                {% csrf_token %}
+                <img
+                style="
+                  width: 65px;
+                  height: auto;
+                  display: inline;
+                  filter: invert(100%);
+                "
+                src="{% static 'images/inmobiliaria.png' %}"
+                alt="Icono"
+              />
+                <h2 class="title">Inmobi AI</h2>
+                <!-- Campos de formulario para el registro -->
+                <div class="input-field">
+                    <i for="username" class='bx bxs-user'></i>
+                    <input type="text" placeholder="Usuario" name="username" id="username" required >
+                </div>
+                <div class="input-field">
+                    <i for="email" class='bx bxs-envelope'></i>
+                    <input type="text" placeholder="Correo" name="email" id="email" required>
+                </div>
+                <div class="input-field">
+                    <i for="password1" class='bx bxs-lock-alt'></i>
+                    <input type="password" placeholder="Contraseña" id="password1" name="password1" required>
+                </div>
+                <div class="input-field">
+                    <i for="password2" class='bx bxs-lock-alt'></i>
+                    <input type="password" placeholder="Confirmar Contraseña" id="password2" name="password2" required>
+                </div>
+                <input type="submit" value="Registrar" name="register_submit" class="btn solid">
+                {% if messages %}
+                <div class="error-messages">
+                  {% for message in messages %}
+                    <p class="social-text" id="error-message">{{ message }}</p>
+                  {% endfor %}
+                </div>
+              
+                <script>
+                  setTimeout(function() {
+                    var errorMessages = document.querySelector('.error-messages');
+                    if (errorMessages) {
+                      errorMessages.style.display = 'none';
+                    }
+                  }, 2000); // 2000 milisegundos = 2 segundos
+                </script>
+              {% endif %}
+
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <i class='bx bxl-google'></i>
+                    </a>
+
+                </div>
+            </form>
+            </div>
+        </div>
+
+
+
+
+
+        <!--PANELES SOLO -->
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Descubre tu espacio perfecto, confía en Nosotros</h3>
+                    <p>
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">Registrate</button>
+                </div>
+                
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Descubre tu espacio perfecto, confía en Nosotros</h3>
+                    <p>Solo faltas TÚ
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">Iniciar Sesion</button>
+                </div>
+                
+            </div>
+        </div>       
+    </div>
+    <script>
+        document.getElementById('sign-up-btn').addEventListener('click', function() {
+          setTimeout(function() {
+            var errorMessages = document.getElementsByClassName('social-text');
+            for (var i = 0; i < errorMessages.length; i++) {
+              errorMessages[i].style.display = 'none';
+            }
+          }, 0); // 2000 milisegundos = 2 segundos
+        });
+      </script>
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'js/app.css' %}"> 
+    <script type="text/javascript" src="{% static "js/script.js" %}"></script>
+</body>
+</html>

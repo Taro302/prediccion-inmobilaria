@@ -1,0 +1,234 @@
+
+/*Valores por defecto del navegador*/
+
+/*Body*/
+body{
+    background-color: #f9f9f9;
+    background: linear-gradient(to top right, hsl(180, 66%, 43%), #e6e9eb);
+}
+
+/*section*/
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+/* contenedor formulario de contacto */
+section .contacForm{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    width: 90%;
+    height: 90%;
+    box-shadow: 1px 9px 20px -5px rgba(0, 0, 0, 0.59);
+    border-radius: 30px;
+}
+section .contacForm .form{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 85%;
+    margin-left: 30px;
+}
+section .contacForm .form form{
+    width: 100%;
+}
+
+/*titulo y descripcion*/
+section .contacForm .form .texto h2{
+    color: rgba(10,44,61,255);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+section .contacForm .form .texto p{
+    color: #0b426c;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+section .contacForm .form form .inputBox{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/*etiquetas e inputs*/
+section .contacForm .form form .inputBox label{
+    color: rgba(10,44,61,255);
+    font-weight: 700;
+}
+section .contacForm .form form .inputBox input[type="text"],
+section .contacForm .form form .inputBox input[type="email"],
+section .contacForm .form form .inputBox textarea{
+    border: none;
+    background: #cbebfb;
+    padding: 10px;
+    border-radius: 15px;
+    color: #1766a3;
+    resize: none;
+}
+section .contacForm .form form .inputBox input[type="text"]:focus,
+section .contacForm .form form .inputBox input[type="email"]:focus,
+section .contacForm .form form .inputBox textarea:focus{
+    outline: 2px solid #1766a3;
+}
+section .contacForm .form input[type="submit"]{
+    background: rgba(10,44,61,255);
+    display: inline-block;
+    text-align: center;
+    width: 250px;
+    padding: 10px;
+    border-radius: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 9px 20px -5px rgba(0, 0, 0, 0.59);
+    transition: 0.3s;
+    display: inline-block;
+    width: 100%;
+}
+section .contacForm .form input[type="submit"]:hover{
+    background: #0b426c;
+}
+
+/*contenedor informacion*/
+section .contacForm .info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* imagen */
+section .contacForm .info .imgBox{
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+section .contacForm .info .imgBox img{
+   /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;*/
+    width: 100%;
+    height: 100%;
+    background: center;
+    background-size: cover;
+    border-radius: 20%;
+    border: 3px solid hsl(7, 56%, 91%);
+    
+}
+
+/* informacion de contacto */
+section .contacForm .info .textBox{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: flex-start;
+    flex-direction: column;
+}
+section .contacForm .info .textBox .infoContact{
+    display: flex;
+    justify-content: center;
+    
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+section .contacForm .info .textBox .infoContact ion-icon{
+    font-size: 2em;
+    margin-right: 10px;
+    color: #0b426c;
+}
+section .contacForm .info .textBox .infoContact p{
+    color: #0b426c;
+}
+
+/*redes sociales*/
+section .contacForm .info .rrss a{
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding: 20px;
+    font-size: 2em;
+    align-items: center;
+    justify-content: space-around;
+    color: #1766a3;
+    transition: 0.3s;
+}
+section .contacForm .info .rrss a:hover{
+    color: #0b426c;
+}
+
+/*pantallas largas*/
+@media only screem and (max-width: 1200px){
+    section .contacForm{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/*laptops y tablets*/
+@media only screem and (max-width: 768px){
+    section .contacForm .info{
+        height: 300px;
+        padding: 20px;
+    }
+    section .contacForm .info .imgBox{
+        display: none;
+    }
+}
+
+/*celulares*/
+@media only screem and (max-width: 600px){
+    section .contacForm .form{
+        margin-left: 0px;
+        width: 100%;
+    }
+    section .contacForm .info{
+        margin-bottom: 30px;
+    }
+}
+
+/* Pie de página */
+footer {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+  .helptext{
+
+    display: none;
+  }
+  
+
+  a[href^="/media/profile_pics/"] {
+    display: none;
+  }
+
+  p.currently::before {
+    content: "";
+    display: none;
+  }
+  
+
+p.change {
+    display: none;
+  }
+  p.currently::before {
+    content: "";
+    display: none;
+  }
