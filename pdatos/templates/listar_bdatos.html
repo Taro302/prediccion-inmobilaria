@@ -1,0 +1,12 @@
+<form method="post" action="{% url 'crear_bdatos' %}">
+    {% csrf_token %}
+    <label for="tamanio">Tamaño:</label>
+    <input type="number" name="tamanio" value="{{ ultimo_bdatos.tamanio }}" required>
+    
+    <label for="habitaciones">Habitaciones:</label>
+    <input type="number" name="habitaciones" value="{{ ultimo_bdatos.habitaciones }}" required>
+    
+    <!-- Agrega los campos restantes con los valores correspondientes -->
+
+    <button type="submit">Guardar</button>
+</form>

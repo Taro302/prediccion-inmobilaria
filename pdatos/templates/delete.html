@@ -1,0 +1,16 @@
+<h1>Eliminar Datos</h1>
+<p>¿Estás seguro de que deseas eliminar estos datos?</p>
+<p>ID: {{ dato.id }}</p>
+<p>Tamaño: {{ dato.tamanio }}</p>
+<p>Habitaciones: {{ dato.habitaciones }}</p>
+<p>Baños: {{ dato.banos }}</p>
+<p>Estacionamiento: {{ dato.estacionamiento }}</p>
+<p>Piscina: {{ dato.piscina }}</p>
+<p>Distrito: {{ dato.distrito }}</p>
+<p>Precio: {{ dato.precio }}</p>
+
+<form method="post" action="{% url 'deleteData' dato.id %}">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Eliminar</button>
+  <a href="{% url 'index_datos' %}" class="btn btn-secondary">Cancelar</a>
+</form>
