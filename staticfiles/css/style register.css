@@ -1,0 +1,80 @@
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+}
+
+.formulario {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.register-container {
+  max-width: 1200px;
+}
+
+.register {
+  padding: 20px;
+}
+
+.columna {
+  width: 100%;
+  display: flex;
+}
+
+.grupo {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.grupo input,
+.grupo select.input-select {
+  width: 95%;
+  color: white;
+  margin-top: 1px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #4f4f4f;
+}
+
+.image img {
+  max-width: auto;
+  max-height: 850px;
+  border-radius: 15px;
+}
+
+.cajitas {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.marcar {
+  margin-bottom: 10px;
+}
+
+.marcar label {
+  display: inline-block;
+  position: relative;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.create-account {
+  text-align: center;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.derechos,
+.politica {
+  font-size: 14px;
+  color: #838383;
+}
