@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot ImobiAI</title>
+    <link rel="stylesheet" href="{% static 'css/styles_index2.css' %}" />
+    <!-- GOOGLE FONT PARA ICONOS -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+  </head>
+  <body>
+    <div>
+        <button class="chatbot-toggler">
+            <span class="material-symbols-outlined">mode_comment</span>
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="chatbot">
+            <header>
+                <h2>InmobiAssist</h2>
+                <span class="close-btn material-symbols-outlined">close</span>
+            </header>
+            <ul class="chatbox">
+                <li class="chat incoming">
+                    <span class="material-symbols-outlined">smart_toy</span>
+                    <p>¡Hola! 👋 <br>¿Cómo puedo ayudarte hoy?</p>
+                </li>
+            </ul>
+            <div class="chat-input">
+                <textarea id="userInput" placeholder="Escribe aquí..." required></textarea>
+                <span id="send-btn" class="material-symbols-outlined">send</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+        function getUserResponse() {
+            var userText = $('#userInput').val();
+            var userHTML = "<li class='chat outgoing'><span class='material-symbols-outlined'>face</span><p>" + userText + "</p></li>";
+            $('#userInput').val("");
+            $('.chatbox').append(userHTML);
+    
+            $.get('/chatbot/getResponse', { userMessage: userText }).done(function (data) {
+                var returnedMessage = "<li class='chat incoming'><span class='material-symbols-outlined'>smart_toy</span><p>" + data + "</p></li>";
+                $('.chatbox').append(returnedMessage);
+                scrollToBottom();           
+            });
+        }
+   
+        function handleKeyPress(event) {
+            if (event.keyCode === 13 && !event.shiftKey) {
+                event.preventDefault();
+                getUserResponse();
+                scrollToBottom(); // Llamar a la función para desplazar el chat al último mensaje después de obtener la respuesta del chatbot.
+            }
+        }        
+
+
+        $('#send-btn').click(function () {
+            getUserResponse();
+            scrollToBottom();
+        });
+
+        // Función para hacer scroll hacia abajo
+        function scrollToBottom() {
+        var chatbox = document.querySelector(".chatbox");
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+        }
+        
+        // Llamamos a scrollToBottom al cargar la página para que se muestre siempre el último mensaje
+        scrollToBottom();
+
+
+        // Agregar evento para escuchar la tecla "Enter" en el textarea
+        const chatInput = document.getElementById("userInput");
+        chatInput.addEventListener("keydown", handleKeyPress);
+        
+    </script>
+    <script>
+    const chatbotToggler= document.querySelector(".chatbot-toggler");
+    const chatbotCloseBtn= document.querySelector(".close-btn");
+    chatbotCloseBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+    chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{"intents":[
+    {
+        "tag": "saludo",
+        "patterns": ["hola", "qué tal", "cómo estás", "saludos"],
+        "responses": ["Hola!", "Buenos días!", "¿Cómo estás?"]
+    },
+    {
+        "tag": "nombre",
+        "patterns": ["cómo es tu nombre", "cómo te llamas"],
+        "responses": ["Me llamo Gallosor Camisa", "Mi nombre es Gallosor"]
+    },
+    {
+        "tag": "despedida",
+        "patterns": ["Adiós", "Hasta luego", "Nos vemos"],
+        "responses": ["¡Hasta luego! ¡Que tengas un buen día!"]
+    },
+    {
+        "tag": "ayuda",
+        "patterns": ["Ayuda", "Necesito ayuda", "¿Puedes ayudarme?"],
+        "responses": ["Claro, estoy aquí para ayudarte. ¿En qué necesitas ayuda?"]
+    },
+    {
+        "tag": "otro",
+        "patterns": ["*"],
+        "responses": ["Lo siento, no entiendo esa pregunta. ¿Puedes reformularla?"]
+    }
+]
+
+}
